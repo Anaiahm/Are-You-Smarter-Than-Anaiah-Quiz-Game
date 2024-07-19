@@ -1,0 +1,40 @@
+h1{
+    text-align: center;
+    size: 600px;
+    color:hotpink;
+    font-weight: bold;
+    font-family:"Bubbler One", sans-serif;
+    margin-top: 30px;
+    }
+    button {
+    
+        size: 3px;
+        color: hotpink;
+        font-family: "Bubbler One", sans-serif;
+        display: inline-block;
+        margin: 30px;
+        text-align: center;
+        border: solid hotpink;
+        padding: 10px;
+        background-color: white;
+        
+    }
+    h2 {
+    text-align: center;
+    size: 400px;
+    color:hotpink;
+    font-family:"Bubbler One", sans-serif;
+    }
+
+    div {
+        text-align: center;
+        color: pink;
+        font-family: "Bubbler One", sans-serif;
+        text-align: center;
+    }
+
+    questions {
+        color: pink;
+        font-family: "Bubbler One", sans-serif;
+        text-align: center;
+    }

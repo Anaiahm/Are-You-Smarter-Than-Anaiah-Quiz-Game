@@ -19,30 +19,30 @@ const questions = [
         ]
     },
     {
-        question: "What is the name of the main villian in Frozen?",
+        question: "Who's heart was stolen in Moana?",
         options: [
-            { choice: "Hans", correct: true },
-            { choice: "Elsa", correct: false },
-            { choice: "Olaf", correct: false },
-            { choice: "Anna", correct: false },
+            { choice: "Hei Hei", correct: false },
+            { choice: "Maoui", correct: false },
+            { choice: "Moana", correct: false },
+            { choice: "Te Fiti", correct: true },
         ]
     },
     {
-        question: "What is the name of the main villian in Frozen?",
+        question: "Where was the abominable snowman banished in Monsters Inc?",
         options: [
-            { choice: "Hans", correct: true },
-            { choice: "Elsa", correct: false },
-            { choice: "Olaf", correct: false },
-            { choice: "Anna", correct: false },
+            { choice: "Australia", correct: false },
+            { choice: "The Himilayas", correct: true },
+            { choice: "Hawaii", correct: false },
+            { choice: "Alaska", correct: false },
         ]
     },
     {
-        question: "What is the name of the main villian in Frozen?",
+        question: "What is the name of the cowboy in Toy Story?",
         options: [
-            { choice: "Hans", correct: true },
-            { choice: "Elsa", correct: false },
-            { choice: "Olaf", correct: false },
-            { choice: "Anna", correct: false },
+            { choice: "Bo Peep", correct: false },
+            { choice: "Andy", correct: false },
+            { choice: "Woody", correct: true },
+            { choice: "Jessie", correct: false },
         ]
     },
 ];
@@ -64,6 +64,9 @@ const option1 = document.querySelector(".o-0")
 const option2 = document.querySelector(".o-1")
 const option3 = document.querySelector(".o-2")
 const option4 = document.querySelector(".o-3")
+const gameStatusElement = document.querySelector(".gameStatus")
+const winStatusMessage = document.querySelector(".win")
+const loseStatusMessage = document.querySelector(".lose")
 // cache h2 element to display message gameStatusMessage
 
 
@@ -73,6 +76,8 @@ const init = () => {
     currentQuestionIDX = 0;
     winner = null;
     QuizContainerElement.style.display = "none"
+    winStatusMessage.style.display = "none"
+  loseStatusMessage.style.display = "none"
 }
 
 const startQuiz = () => {
@@ -82,6 +87,17 @@ const startQuiz = () => {
 }
 const renderWinOrLoseMessage = () => {
   // make an IF condiitonal that if score is 5 its a winner else loser
+
+  if (score >= 5) {
+    winStatusMessage.style.display = "block"
+    QuizContainerElement.style.display = "none"
+    console.log("You Win! You ARE Smarter Than Anaiah!")
+  }
+  else {
+    loseStatusMessage.style.display = "block"
+    QuizContainerElement.style.display = "none"
+    console.log("You lose! You ARE NOT Smarter Than Anaiah!")
+  }
 }
 const render = () => {
     if (currentQuestionIDX < 5 ){
