@@ -46,6 +46,11 @@ const questions = [
         ]
     },
 ];
+// const rules = [
+// "There are 10 questions in each Category", "You must answer at least 7 questions correctly to win",
+// "If you answer three questions incorrectly, YOU LOSE!", "You may retry as many times as you'd like",
+// "There is a <i> suggested</i> 15 second timer per quesion"
+// ];
 
 /*---------- Variables (state) ---------*/
 let score = 0;
@@ -56,10 +61,16 @@ let winner = null;
 
 /*----- Cached Element References  -----*/
 const startContainerElement = document.getElementById("startContainer");
-const QuizContainerElement = document.getElementById("quizContainer");
+const QuizContainer1Element = document.getElementById("quizContainer1");
+const QuizContainer2Element = document.getElementById("quizContainer2");
+const QuizContainer3Element = document.getElementById("quizContainer3");
 const startGameButton = document.getElementById("start");
 const questionElement = document.querySelector(".question");
 const rulesButton = document.getElementById('rules');
+const backButton = document.querySelector(".back")
+const kmButton = document.querySelector(".kids")
+const pcButton = document.querySelector(".pop")
+const rfButton = document.querySelector(".random")
 const option1 = document.querySelector(".o-0")
 const option2 = document.querySelector(".o-1")
 const option3 = document.querySelector(".o-2")
@@ -67,6 +78,11 @@ const option4 = document.querySelector(".o-3")
 const gameStatusElement = document.querySelector(".gameStatus")
 const winStatusMessage = document.querySelector(".win")
 const loseStatusMessage = document.querySelector(".lose")
+const gameRules = document.querySelector(".gRules")
+const categoryContainerElement = document.querySelector(".categories")
+const kidMovies = document.querySelector("km")
+const popCulture = document.querySelector("pc")
+const randomFacts = document.querySelector("rf")
 // cache h2 element to display message gameStatusMessage
 
 
@@ -75,34 +91,61 @@ const init = () => {
     score = 0;
     currentQuestionIDX = 0;
     winner = null;
-    QuizContainerElement.style.display = "none"
+    QuizContainer1Element.style.display = "none"
+    QuizContainer2Element.style.display = "none"
+    QuizContainer3Element.style.display = "none"
     winStatusMessage.style.display = "none"
-  loseStatusMessage.style.display = "none"
+    loseStatusMessage.style.display = "none"
+    gameRules.style.display = "none"
+    backButton.style.display = "none"
+    categoryContainerElement.style.display = 'none'
 }
 
-const startQuiz = () => {
-    QuizContainerElement.style.display = "block"
+const startQuiz1 = () => {
+    QuizContainer1Element.style.display = "block"
     startContainerElement.style.display = "none"
+    backButton.style.display = "block"
+    categoryContainerElement.style.display = 'none'
+    render()
+}
+const startQuiz2 = () => {
+    QuizContainer2Element.style.display = "block"
+    startContainerElement.style.display = "none"
+    backButton.style.display = "block"
+    categoryContainerElement.style.display = 'none'
+    render()
+}
+const startQuiz3 = () => {
+    QuizContainer3Element.style.display = "block"
+    startContainerElement.style.display = "none"
+    backButton.style.display = "block"
+    categoryContainerElement.style.display = 'none'
     render()
 }
 const renderWinOrLoseMessage = () => {
-  // make an IF condiitonal that if score is 5 its a winner else loser
+    // make an IF condiitonal that if score is 5 its a winner else loser
 
-  if (score >= 5) {
-    winStatusMessage.style.display = "block"
-    QuizContainerElement.style.display = "none"
-    console.log("You Win! You ARE Smarter Than Anaiah!")
-  }
-  else {
-    loseStatusMessage.style.display = "block"
-    QuizContainerElement.style.display = "none"
-    console.log("You lose! You ARE NOT Smarter Than Anaiah!")
-  }
+    if (score >= 5) {
+        winStatusMessage.style.display = "block"
+        QuizContainer1Element.style.display = "none"
+        QuizContainer2Element.style.display = "none"
+        QuizContainer3Element.style.display = "none"
+        backButton.style.display = "block"
+        console.log("You Win! You ARE Smarter Than Anaiah!")
+    }
+    else {
+        loseStatusMessage.style.display = "block"
+        QuizContainer1Element.style.display = "none"
+        QuizContainer2Element.style.display = "none"
+        QuizContainer3Element.style.display = "none"
+        backButton.style.display = "block"
+        console.log("You lose! You ARE NOT Smarter Than Anaiah!")
+    }
 }
 const render = () => {
-    if (currentQuestionIDX < 5 ){
-        renderQuestion() 
-        
+    if (currentQuestionIDX < 5) {
+        renderQuestion()
+
     } else {
         renderWinOrLoseMessage()
     }
@@ -129,9 +172,43 @@ const handleAnswerClick = (event) => {
 
 }
 
+const showRules = () => {
+gameRules.style.display = "block"
+startContainerElement.style.display = "none"
+backButton.style.display = "block"
+}
+
+const goBack = () => {
+    score = 0;
+    currentQuestionIDX = 0;
+    winner = null;
+    QuizContainer1Element.style.display = "none"
+    QuizContainer2Element.style.display = "none"
+    QuizContainer3Element.style.display = "none"
+    winStatusMessage.style.display = "none"
+    loseStatusMessage.style.display = "none"
+    gameRules.style.display = "none"
+    backButton.style.display = "none"
+    startContainerElement.style.display = "block"
+    categoryContainerElement.style.display = 'none'
+}
+
+const showCategories = () => {
+    categoryContainerElement.style.display = 'block'
+    backButton.style.display = "block"
+    gameRules.style.display = "none"
+    startContainerElement.style.display = "none"
+}
+
 init()
 /*----------- Event Listeners ----------*/
-startGameButton.addEventListener("click", startQuiz);
+startGameButton.addEventListener("click", showCategories);
+// startGameButton.addEventListener("click", startQuiz);
+kmButton.addEventListener('click',startQuiz1)
+pcButton.addEventListener('click',startQuiz2)
+rfButton.addEventListener('click',startQuiz3)
+rulesButton.addEventListener('click',showRules)
+backButton.addEventListener('click',goBack)
 option1.addEventListener("click", handleAnswerClick);
 option2.addEventListener("click", handleAnswerClick);
 option3.addEventListener("click", handleAnswerClick);

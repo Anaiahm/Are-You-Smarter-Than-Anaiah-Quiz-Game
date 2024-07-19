@@ -38,3 +38,14 @@ h1{
         font-family: "Bubbler One", sans-serif;
         text-align: center;
     }
+    .gRules {
+        size: 50px;
+        color: lightpink;
+        font-family: "Bubbler One", sans-serif;
+       text-align: center;
+        
+    }
+
+    .back {
+        text-align: center;
+    }
