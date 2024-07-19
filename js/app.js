@@ -50,6 +50,7 @@ const questions = [
 /*---------- Variables (state) ---------*/
 let score = 0;
 let currentQuestionIDX = 0;
+let winner = null;
 
 
 
@@ -59,14 +60,18 @@ const QuizContainerElement = document.getElementById("quizContainer");
 const startGameButton = document.getElementById("start");
 const questionElement = document.querySelector(".question");
 const rulesButton = document.getElementById('rules');
-const option1 = document.querySelector(".option1")
-const option2 = document.querySelector(".option2")
-const option3 = document.querySelector(".option3")
-const option4 = document.querySelector(".option4")
+const option1 = document.querySelector(".o-0")
+const option2 = document.querySelector(".o-1")
+const option3 = document.querySelector(".o-2")
+const option4 = document.querySelector(".o-3")
+// cache h2 element to display message gameStatusMessage
 
 
 /*-------------- Functions -------------*/
 const init = () => {
+    score = 0;
+    currentQuestionIDX = 0;
+    winner = null;
     QuizContainerElement.style.display = "none"
 }
 
@@ -75,19 +80,44 @@ const startQuiz = () => {
     startContainerElement.style.display = "none"
     render()
 }
-
+const renderWinOrLoseMessage = () => {
+  // make an IF condiitonal that if score is 5 its a winner else loser
+}
 const render = () => {
-    renderQuestion()
+    if (currentQuestionIDX < 5 ){
+        renderQuestion() 
+        
+    } else {
+        renderWinOrLoseMessage()
+    }
+    console.log(score)
 }
 const renderQuestion = () => {
     questionElement.textContent = questions[currentQuestionIDX].question
-    option1.textContent = questions[currentQuestionIDX].option[0]
-    option2.textContent = questions[currentQuestionIDX].option[1]
-    option3.textContent = questions[currentQuestionIDX].option[2]
-    option4.textContent = questions[currentQuestionIDX].option[3]
+    option1.textContent = questions[currentQuestionIDX].options[0].choice
+    option2.textContent = questions[currentQuestionIDX].options[1].choice
+    option3.textContent = questions[currentQuestionIDX].options[2].choice
+    option4.textContent = questions[currentQuestionIDX].options[3].choice
 }
 
+const handleAnswerClick = (event) => {
+    const className = event.target.className
+    let index = className.replace('o-', '')
+    index = Number(index)
+    console.log(typeof index)
+    if (event.target.textContent === questions[currentQuestionIDX].options[index].choice && questions[currentQuestionIDX].options[index].correct === true) {
+        score = score + 1
+    }
+    currentQuestionIDX = currentQuestionIDX + 1
+    render()
+
+}
 
 init()
 /*----------- Event Listeners ----------*/
-startGameButton.addEventListener("click", startQuiz)
+startGameButton.addEventListener("click", startQuiz);
+option1.addEventListener("click", handleAnswerClick);
+option2.addEventListener("click", handleAnswerClick);
+option3.addEventListener("click", handleAnswerClick);
+option4.addEventListener("click", handleAnswerClick);
+
