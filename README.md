@@ -1,6 +1,5 @@
 <div align="center">
-![Project Logo](https://github.com/anaiahm/repository/raw/main/image.png)
-
+![Project Logo](https://github.com/a/Users/anaiah/code/ga/projects/Project-1/Feminine Torn Paper Name YouTube Channel Art.png)
 <h1> Are You Smarter than Anaiah?</h1>
 <p> 
 This is a Quiz game with simple multiple choice questions loosely themed after "Are you Smarter Than a 5th Grader?"
