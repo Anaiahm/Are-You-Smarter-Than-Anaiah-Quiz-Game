@@ -140,11 +140,7 @@ const questions3 = [
         ]
     },
 ];
-// const rules = [
-// "There are 10 questions in each Category", "You must answer at least 7 questions correctly to win",
-// "If you answer three questions incorrectly, YOU LOSE!", "You may retry as many times as you'd like",
-// "There is a <i> suggested</i> 15 second timer per quesion"
-// ];
+
 
 /*---------- Variables (state) ---------*/
 let score = 0;
@@ -177,7 +173,7 @@ const categoryContainerElement = document.querySelector(".categories")
 const kidMovies = document.querySelector("km")
 const popCulture = document.querySelector("pc")
 const randomFacts = document.querySelector("rf")
-// cache h2 element to display message gameStatusMessage
+
 
 
 /*-------------- Functions -------------*/
@@ -217,7 +213,7 @@ const startQuiz3 = () => {
     render()
 }
 const renderWinOrLoseMessage = () => {
-    // make an IF condiitonal that if score is 5 its a winner else loser
+    
 
     if (score >= 5) {
         winStatusMessage.style.display = "block"
@@ -225,7 +221,6 @@ const renderWinOrLoseMessage = () => {
         QuizContainer2Element.style.display = "none"
         QuizContainer3Element.style.display = "none"
         backButton.style.display = "block"
-        console.log("You Win! You ARE Smarter Than Anaiah!")
     }
     else {
         loseStatusMessage.style.display = "block"
@@ -233,7 +228,6 @@ const renderWinOrLoseMessage = () => {
         QuizContainer2Element.style.display = "none"
         QuizContainer3Element.style.display = "none"
         backButton.style.display = "block"
-        console.log("You lose! You ARE NOT Smarter Than Anaiah!")
     }
 }
 const render = () => {
@@ -243,7 +237,7 @@ const render = () => {
     } else {
         renderWinOrLoseMessage()
     }
-    console.log(score)
+   
 }
 const renderQuestion = () => {
     questionElement.textContent = questions[currentQuestionIDX].question
@@ -271,7 +265,6 @@ const handleAnswerClick = (event) => {
     const className = event.target.className
     let index = className.replace('o-', '')
     index = Number(index)
-    console.log(typeof index)
     if (event.target.textContent === questions[currentQuestionIDX].options[index].choice && questions[currentQuestionIDX].options[index].correct === true) {
         score = score + 1
     }
@@ -283,7 +276,6 @@ const handleAnswerClick2 = (event) => {
     const className = event.target.className
     let index = className.replace('o-', '')
     index = Number(index)
-    console.log(typeof index)
     if (event.target.textContent === questions2[currentQuestionIDX].options[index].choice && questions2[currentQuestionIDX].options[index].correct === true) {
         score = score + 1
     }
@@ -295,7 +287,6 @@ const handleAnswerClick3 = (event) => {
     const className = event.target.className
     let index = className.replace('o-', '')
     index = Number(index)
-    console.log(typeof index)
     if (event.target.textContent === questions3[currentQuestionIDX].options[index].choice && questions3[currentQuestionIDX].options[index].correct === true) {
         score = score + 1
     }
@@ -335,7 +326,6 @@ const showCategories = () => {
 init()
 /*----------- Event Listeners ----------*/
 startGameButton.addEventListener("click", showCategories);
-// startGameButton.addEventListener("click", startQuiz);
 kmButton.addEventListener('click',startQuiz1)
 pcButton.addEventListener('click',startQuiz2)
 rfButton.addEventListener('click',startQuiz3)
