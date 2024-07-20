@@ -46,6 +46,100 @@ const questions = [
         ]
     },
 ];
+const questions2 = [
+    {
+        question: "Who is not a Kardashian?",
+        options: [
+            { choice: "Kylie", correct: true },
+            { choice: "Khloe", correct: false },
+            { choice: "Kim", correct: false },
+            { choice: "Kourtney", correct: false },
+        ]
+    },
+    {
+        question: "Who is not a pop artist?",
+        options: [
+            { choice: "Taylor Swift", correct: false },
+            { choice: "Sabrina Carpenter", correct: false },
+            { choice: "Katy Perry", correct: false },
+            { choice: "Tanner Adell", correct: true },
+        ]
+    },
+    {
+        question: "When is Star Wars Day?",
+        options: [
+            { choice: "July 8th", correct: false },
+            { choice: "November 23rd", correct: false },
+            { choice: "May 4th", correct: true },
+            { choice: "June 2nd", correct: false },
+        ]
+    },
+    {
+        question: "How many Harry Potter books are there?",
+        options: [
+            { choice: "8", correct: false },
+            { choice: "7", correct: true },
+            { choice: "9", correct: false },
+            { choice: "5", correct: false },
+        ]
+    },
+    {
+        question: "What Avenger can pick up Mjolnir?",
+        options: [
+            { choice: "Iron Man", correct: false },
+            { choice: "Vision", correct: true },
+            { choice: "Black Widow", correct: false },
+            { choice: "Hulk", correct: false },
+        ]
+    },
+];
+const questions3 = [
+    {
+        question: "What is the smallest country in the world?",
+        options: [
+            { choice: "USA", correct: false },
+            { choice: "Vatican City", correct: true },
+            { choice: "France", correct: false },
+            { choice: "Austria", correct: false },
+        ]
+    },
+    {
+        question: "Who was the first President?",
+        options: [
+            { choice: "Benjamin Franklin", correct: false },
+            { choice: "John F Kennedy", correct: false },
+            { choice: "Barack Obama", correct: false },
+            { choice: "George Washington", correct: true },
+        ]
+    },
+    {
+        question: "What is the chemical symbol for Gold?",
+        options: [
+            { choice: "O", correct: false },
+            { choice: "K", correct: false },
+            { choice: "Ag", correct: false },
+            { choice: "Au", correct: true },
+        ]
+    },
+    {
+        question: "What is the name of the Galaxy that controls our solar system?",
+        options: [
+            { choice: "The KitKat Galaxy", correct: false },
+            { choice: "The Milky Way Galaxy", correct: true },
+            { choice: "Earth", correct: false },
+            { choice: "IDK", correct: false },
+        ]
+    },
+    {
+        question: "What is the most abumndant gas in Earth's atmosphere?",
+        options: [
+            { choice: "Helium", correct: false },
+            { choice: "Oxygen", correct: false },
+            { choice: "Nitrogen", correct: true },
+            { choice: "Carbon", correct: false },
+        ]
+    },
+];
 // const rules = [
 // "There are 10 questions in each Category", "You must answer at least 7 questions correctly to win",
 // "If you answer three questions incorrectly, YOU LOSE!", "You may retry as many times as you'd like",
@@ -158,6 +252,20 @@ const renderQuestion = () => {
     option3.textContent = questions[currentQuestionIDX].options[2].choice
     option4.textContent = questions[currentQuestionIDX].options[3].choice
 }
+const renderQuestion2 = () => {
+    questionElement.textContent = questions1[currentQuestionIDX].question
+    option1.textContent = questions2[currentQuestionIDX].options[0].choice
+    option2.textContent = questions2[currentQuestionIDX].options[1].choice
+    option3.textContent = questions2[currentQuestionIDX].options[2].choice
+    option4.textContent = questions2[currentQuestionIDX].options[3].choice
+}
+const renderQuestion3 = () => {
+    questionElement.textContent = questions2[currentQuestionIDX].question
+    option1.textContent = questions3[currentQuestionIDX].options[0].choice
+    option2.textContent = questions3[currentQuestionIDX].options[1].choice
+    option3.textContent = questions3[currentQuestionIDX].options[2].choice
+    option4.textContent = questions3[currentQuestionIDX].options[3].choice
+}
 
 const handleAnswerClick = (event) => {
     const className = event.target.className
@@ -165,6 +273,30 @@ const handleAnswerClick = (event) => {
     index = Number(index)
     console.log(typeof index)
     if (event.target.textContent === questions[currentQuestionIDX].options[index].choice && questions[currentQuestionIDX].options[index].correct === true) {
+        score = score + 1
+    }
+    currentQuestionIDX = currentQuestionIDX + 1
+    render()
+
+}
+const handleAnswerClick2 = (event) => {
+    const className = event.target.className
+    let index = className.replace('o-', '')
+    index = Number(index)
+    console.log(typeof index)
+    if (event.target.textContent === questions2[currentQuestionIDX].options[index].choice && questions2[currentQuestionIDX].options[index].correct === true) {
+        score = score + 1
+    }
+    currentQuestionIDX = currentQuestionIDX + 1
+    render()
+
+}
+const handleAnswerClick3 = (event) => {
+    const className = event.target.className
+    let index = className.replace('o-', '')
+    index = Number(index)
+    console.log(typeof index)
+    if (event.target.textContent === questions3[currentQuestionIDX].options[index].choice && questions3[currentQuestionIDX].options[index].correct === true) {
         score = score + 1
     }
     currentQuestionIDX = currentQuestionIDX + 1
