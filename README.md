@@ -1,5 +1,5 @@
 <div align="center">
-![Project Logo](https://github.com/a/Users/anaiah/code/ga/projects/Project-1/Feminine Torn Paper Name YouTube Channel Art.png)
+<p><img src= "/Users/anaiah/code/ga/projects/Project-1/Logo.png"></p>
 <h1> Are You Smarter than Anaiah?</h1>
 <p> 
 This is a Quiz game with simple multiple choice questions loosely themed after "Are you Smarter Than a 5th Grader?"
@@ -9,14 +9,14 @@ This is a Quiz game with simple multiple choice questions loosely themed after "
 <h2>
 How To Play 
 </h2>
-<p> 
- 1. There are 5 questions in each Category
- 2. You must answer all 5 questions correctly to win
- 3. If you answer even 1 question incorrectly, YOU LOSE!
- 4. You may retry as many times as you like
- 5. There is a <i>suggested</i> 15 second timer per quesion
- 6. No Cheating! Good Luck https://anaiahm.github.io/Are-You-Smarter-Than-Anaiah-Quiz-Game/
-</p>
+<ol> 
+    <li>There are 5 questions in each Category</li>
+    <li>You must answer all 5 questions correctly to win</li>
+    <li>If you answer even 1 question incorrectly, YOU LOSE!</li>
+    <li>You may retry as many times as you like</li>
+    <li>There is a <i>suggested</i> 15 second timer per quesion</li>
+    <li>No Cheating! Good Luck https://anaiahm.github.io/Are-You-Smarter-Than-Anaiah-Quiz-Game/</li>
+</ol>
 </div>
 <div align="center">
 <h2>
@@ -34,9 +34,9 @@ Technology Used
 <h2>
 Next Steps
 </h2>
-<p> 
- 1. Adding Background Music and Mute/Un Mute button
- 2. Adding a feature to type your name before gameplay and show "NAME is Smarter than Anaiah" Upon Win
- 3. Adding Additional Categories
-</p>
+<ol> 
+ <li>Adding Background Music and Mute/Un Mute button</li>
+ <li>Adding a feature to type your name before gameplay and show "NAME is Smarter than Anaiah" Upon Win</li>
+ <li>Adding Additional Categories</li>
+</ol>
 </div>
