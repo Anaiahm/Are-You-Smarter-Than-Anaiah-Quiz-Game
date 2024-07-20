@@ -1,17 +1,43 @@
-# Are You Smarter than Anaiah?
-<p align="center"> 
+<div align="center">
+![Project Logo](https://github.com/anaiahm/repository/raw/main/image.png)
+
+<h1> Are You Smarter than Anaiah?</h1>
+<p> 
 This is a Quiz game with simple multiple choice questions loosely themed after "Are you Smarter Than a 5th Grader?"
 </p>
-<h align="center">
+</div>
+<div align="center">
+<h2>
 How To Play 
-</h>
-<p align="center"> 
+</h2>
+<p> 
  1. There are 5 questions in each Category
  2. You must answer all 5 questions correctly to win
  3. If you answer even 1 question incorrectly, YOU LOSE!
  4. You may retry as many times as you like
  5. There is a <i>suggested</i> 15 second timer per quesion
- 6. No Cheating! Good Luck 
+ 6. No Cheating! Good Luck https://anaiahm.github.io/Are-You-Smarter-Than-Anaiah-Quiz-Game/
 </p>
-
-Deployed Game: https://anaiahm.github.io/Are-You-Smarter-Than-Anaiah-Quiz-Game/
+</div>
+<div align="center">
+<h2>
+Technology Used
+</h2>
+<p> 
+  <ul>
+  <li>HTML</li>
+  <li>JavaScript</li>
+  <li>CSS</li>
+  </ul>
+</p>
+</div>
+<div align="center">
+<h2>
+Next Steps
+</h2>
+<p> 
+ 1. Adding Background Music and Mute/Un Mute button
+ 2. Adding a feature to type your name before gameplay and show "NAME is Smarter than Anaiah" Upon Win
+ 3. Adding Additional Categories
+</p>
+</div>
