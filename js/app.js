@@ -146,7 +146,7 @@ const questions3 = [
 let score = 0;
 let currentQuestionIDX = 0;
 let winner = null;
-
+let quiz 
 
 
 /*----- Cached Element References  -----*/
@@ -184,8 +184,8 @@ const init = () => {
     currentQuestionIDX = 0;
     winner = null;
     QuizContainer1Element.style.display = "none"
-    QuizContainer2Element.style.display = "none"
-    QuizContainer3Element.style.display = "none"
+    // QuizContainer2Element.style.display = "none"
+    // QuizContainer3Element.style.display = "none"
     winStatusMessage.style.display = "none"
     loseStatusMessage.style.display = "none"
     gameRules.style.display = "none"
@@ -194,6 +194,7 @@ const init = () => {
 }
 
 const startQuiz1 = () => {
+    quiz = questions;
     QuizContainer1Element.style.display = "block"
     startContainerElement.style.display = "none"
     backButton.style.display = "block"
@@ -201,14 +202,16 @@ const startQuiz1 = () => {
     render()
 }
 const startQuiz2 = () => {
-    QuizContainer2Element.style.display = "block"
+    quiz = questions2;
+    QuizContainer1Element.style.display = "block"
     startContainerElement.style.display = "none"
     backButton.style.display = "block"
     categoryContainerElement.style.display = 'none'
     render()
 }
 const startQuiz3 = () => {
-    QuizContainer3Element.style.display = "block"
+    quiz = questions3;
+    QuizContainer1Element.style.display = "block"
     startContainerElement.style.display = "none"
     backButton.style.display = "block"
     categoryContainerElement.style.display = 'none'
@@ -220,82 +223,71 @@ const renderWinOrLoseMessage = () => {
     if (score >= 5) {
         winStatusMessage.style.display = "block"
         QuizContainer1Element.style.display = "none"
-        QuizContainer2Element.style.display = "none"
-        QuizContainer3Element.style.display = "none"
+        // QuizContainer2Element.style.display = "none"
+        // QuizContainer3Element.style.display = "none"
         backButton.style.display = "block"
     }
     else {
         loseStatusMessage.style.display = "block"
         QuizContainer1Element.style.display = "none"
-        QuizContainer2Element.style.display = "none"
-        QuizContainer3Element.style.display = "none"
+        // // QuizContainer2Element.style.display = "none"
+        // QuizContainer3Element.style.display = "none"
         backButton.style.display = "block"
     }
 }
 const render = () => {
     if (currentQuestionIDX < 5) {
-        renderQuestion()
+        console.log(quiz)
+        renderQuestion(quiz)
 
     } else {
         renderWinOrLoseMessage()
     }
    
 }
-const renderQuestion = () => {
-    questionElement.textContent = questions[currentQuestionIDX].question
-    option1.textContent = questions[currentQuestionIDX].options[0].choice
-    option2.textContent = questions[currentQuestionIDX].options[1].choice
-    option3.textContent = questions[currentQuestionIDX].options[2].choice
-    option4.textContent = questions[currentQuestionIDX].options[3].choice
+const renderQuestion = (quiz) => {
+console.log(quiz[currentQuestionIDX].options[1].choice)
+    questionElement.textContent = quiz[currentQuestionIDX].question
+    option1.textContent = quiz[currentQuestionIDX].options[0].choice
+    option2.textContent = quiz[currentQuestionIDX].options[1].choice
+    option3.textContent = quiz[currentQuestionIDX].options[2].choice
+    option4.textContent = quiz[currentQuestionIDX].options[3].choice
 }
-const renderQuestion2 = () => {
-    questionElement2.textContent = questions1[currentQuestionIDX].question
-    option1.textContent = questions2[currentQuestionIDX].options[0].choice
-    option2.textContent = questions2[currentQuestionIDX].options[1].choice
-    option3.textContent = questions2[currentQuestionIDX].options[2].choice
-    option4.textContent = questions2[currentQuestionIDX].options[3].choice
-}
-const renderQuestion3 = () => {
-    questionElement3.textContent = questions2[currentQuestionIDX].question
-    option1.textContent = questions3[currentQuestionIDX].options[0].choice
-    option2.textContent = questions3[currentQuestionIDX].options[1].choice
-    option3.textContent = questions3[currentQuestionIDX].options[2].choice
-    option4.textContent = questions3[currentQuestionIDX].options[3].choice
-}
+
 
 const handleAnswerClick = (event) => {
     const className = event.target.className
     let index = className.replace('o-', '')
     index = Number(index)
-    if (event.target.textContent === questions[currentQuestionIDX].options[index].choice && questions[currentQuestionIDX].options[index].correct === true) {
+    if (event.target.textContent === quiz[currentQuestionIDX].options[index].choice && quiz[currentQuestionIDX].options[index].correct === true) {
         score = score + 1
     }
     currentQuestionIDX = currentQuestionIDX + 1
     render()
 
 }
-const handleAnswerClick2 = (event) => {
-    const className = event.target.className
-    let index = className.replace('o-', '')
-    index = Number(index)
-    if (event.target.textContent === questions2[currentQuestionIDX].options[index].choice && questions2[currentQuestionIDX].options[index].correct === true) {
-        score = score + 1
-    }
-    currentQuestionIDX = currentQuestionIDX + 1
-    render()
+// const handleAnswerClick2 = (event) => {
+//     const className = event.target.className
+//     let index = className.replace('o-', '')
+//     index = Number(index)
+//     if (event.target.textContent === questions2[currentQuestionIDX].options[index].choice && questions2[currentQuestionIDX].options[index].correct === true) {
+//         score = score + 1
+//     }
+//     currentQuestionIDX = currentQuestionIDX + 1
+//     render()
 
-}
-const handleAnswerClick3 = (event) => {
-    const className = event.target.className
-    let index = className.replace('o-', '')
-    index = Number(index)
-    if (event.target.textContent === questions3[currentQuestionIDX].options[index].choice && questions3[currentQuestionIDX].options[index].correct === true) {
-        score = score + 1
-    }
-    currentQuestionIDX = currentQuestionIDX + 1
-    render()
+// }
+// const handleAnswerClick3 = (event) => {
+//     const className = event.target.className
+//     let index = className.replace('o-', '')
+//     index = Number(index)
+//     if (event.target.textContent === questions3[currentQuestionIDX].options[index].choice && questions3[currentQuestionIDX].options[index].correct === true) {
+//         score = score + 1
+//     }
+//     currentQuestionIDX = currentQuestionIDX + 1
+//     render()
 
-}
+// }
 
 const showRules = () => {
 gameRules.style.display = "block"
@@ -308,8 +300,8 @@ const goBack = () => {
     currentQuestionIDX = 0;
     winner = null;
     QuizContainer1Element.style.display = "none"
-    QuizContainer2Element.style.display = "none"
-    QuizContainer3Element.style.display = "none"
+    // QuizContainer2Element.style.display = "none"
+    // QuizContainer3Element.style.display = "none"
     winStatusMessage.style.display = "none"
     loseStatusMessage.style.display = "none"
     gameRules.style.display = "none"
