@@ -156,6 +156,8 @@ const QuizContainer2Element = document.getElementById("quizContainer2");
 const QuizContainer3Element = document.getElementById("quizContainer3");
 const startGameButton = document.getElementById("start");
 const questionElement = document.querySelector(".question");
+const questionElement2 = document.querySelector(".question2");
+const questionElement3 = document.querySelector(".question3");
 const rulesButton = document.getElementById('rules');
 const backButton = document.querySelector(".back")
 const kmButton = document.querySelector(".kids")
@@ -247,14 +249,14 @@ const renderQuestion = () => {
     option4.textContent = questions[currentQuestionIDX].options[3].choice
 }
 const renderQuestion2 = () => {
-    questionElement.textContent = questions1[currentQuestionIDX].question
+    questionElement2.textContent = questions1[currentQuestionIDX].question
     option1.textContent = questions2[currentQuestionIDX].options[0].choice
     option2.textContent = questions2[currentQuestionIDX].options[1].choice
     option3.textContent = questions2[currentQuestionIDX].options[2].choice
     option4.textContent = questions2[currentQuestionIDX].options[3].choice
 }
 const renderQuestion3 = () => {
-    questionElement.textContent = questions2[currentQuestionIDX].question
+    questionElement3.textContent = questions2[currentQuestionIDX].question
     option1.textContent = questions3[currentQuestionIDX].options[0].choice
     option2.textContent = questions3[currentQuestionIDX].options[1].choice
     option3.textContent = questions3[currentQuestionIDX].options[2].choice
