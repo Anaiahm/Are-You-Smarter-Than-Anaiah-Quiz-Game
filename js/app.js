@@ -28,7 +28,7 @@ const questions = [
         ]
     },
     {
-        question: "Where was the abominable snowman banished in Monsters Inc?",
+        question: "Where was the abominable snowman banished to in Monsters Inc?",
         options: [
             { choice: "Australia", correct: false },
             { choice: "The Himilayas", correct: true },
@@ -184,8 +184,6 @@ const init = () => {
     currentQuestionIDX = 0;
     winner = null;
     QuizContainer1Element.style.display = "none"
-    // QuizContainer2Element.style.display = "none"
-    // QuizContainer3Element.style.display = "none"
     winStatusMessage.style.display = "none"
     loseStatusMessage.style.display = "none"
     gameRules.style.display = "none"
@@ -223,15 +221,11 @@ const renderWinOrLoseMessage = () => {
     if (score >= 5) {
         winStatusMessage.style.display = "block"
         QuizContainer1Element.style.display = "none"
-        // QuizContainer2Element.style.display = "none"
-        // QuizContainer3Element.style.display = "none"
         backButton.style.display = "block"
     }
     else {
         loseStatusMessage.style.display = "block"
         QuizContainer1Element.style.display = "none"
-        // // QuizContainer2Element.style.display = "none"
-        // QuizContainer3Element.style.display = "none"
         backButton.style.display = "block"
     }
 }
@@ -266,28 +260,6 @@ const handleAnswerClick = (event) => {
     render()
 
 }
-// const handleAnswerClick2 = (event) => {
-//     const className = event.target.className
-//     let index = className.replace('o-', '')
-//     index = Number(index)
-//     if (event.target.textContent === questions2[currentQuestionIDX].options[index].choice && questions2[currentQuestionIDX].options[index].correct === true) {
-//         score = score + 1
-//     }
-//     currentQuestionIDX = currentQuestionIDX + 1
-//     render()
-
-// }
-// const handleAnswerClick3 = (event) => {
-//     const className = event.target.className
-//     let index = className.replace('o-', '')
-//     index = Number(index)
-//     if (event.target.textContent === questions3[currentQuestionIDX].options[index].choice && questions3[currentQuestionIDX].options[index].correct === true) {
-//         score = score + 1
-//     }
-//     currentQuestionIDX = currentQuestionIDX + 1
-//     render()
-
-// }
 
 const showRules = () => {
 gameRules.style.display = "block"
@@ -300,8 +272,6 @@ const goBack = () => {
     currentQuestionIDX = 0;
     winner = null;
     QuizContainer1Element.style.display = "none"
-    // QuizContainer2Element.style.display = "none"
-    // QuizContainer3Element.style.display = "none"
     winStatusMessage.style.display = "none"
     loseStatusMessage.style.display = "none"
     gameRules.style.display = "none"
