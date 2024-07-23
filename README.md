@@ -1,5 +1,5 @@
 <div align="center">
-<p><img src= "/Users/anaiah/code/ga/projects/Project-1/Logo.png"></p>
+<p><img src= Logo.png></p>
 <h1> Are You Smarter than Anaiah?</h1>
 <p> 
 This is a Quiz game with simple multiple choice questions loosely themed after "Are you Smarter Than a 5th Grader?"

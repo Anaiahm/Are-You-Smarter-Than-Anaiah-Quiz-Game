@@ -1,51 +1,99 @@
-h1{
+body {
+    body {
+        background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fchalkboard&psig=AOvVaw10EdP_X2qFL4nT1I46RwO2&ust=1721793224755000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIiz_t6hvIcDFQAAAAAdAAAAABAE');
+        /* Path to your image */
+        background-size: cover;
+        /* Cover the entire page */
+        background-position: center center;
+        /* Center the image */
+        background-repeat: no-repeat;
+        /* Do not repeat the image */
+    }
+
+}
+
+h1 {
     text-align: center;
     size: 600px;
-    color:hotpink;
+    color: hotpink;
     font-weight: bold;
-    font-family:"Bubbler One", sans-serif;
+    font-family: "Bubbler One", sans-serif;
     margin-top: 30px;
-    }
-    button {
-    
-        size: 3px;
-        color: hotpink;
-        font-family: "Bubbler One", sans-serif;
-        display: inline-block;
-        margin: 30px;
-        text-align: center;
-        border: solid hotpink;
-        padding: 10px;
-        background-color: white;
-        
-    }
-    h2 {
+
+}
+
+button {
+
+    size: 3px;
+    color: hotpink;
+    font-family: "Bubbler One", sans-serif;
+    display: inline-block;
+    margin: 30px;
+    text-align: center;
+    border: solid hotpink;
+    padding: 10px;
+    background-color: white;
+
+}
+
+h2 {
     text-align: center;
     size: 400px;
-    color:hotpink;
-    font-family:"Bubbler One", sans-serif;
+    color: hotpink;
+    font-family: "Bubbler One", sans-serif;
+}
+
+div {
+    text-align: center;
+    color: pink;
+    font-family: "Bubbler One", sans-serif;
+    text-align: center;
+}
+
+questions {
+    color: pink;
+    font-family: "Bubbler One", sans-serif;
+    text-align: center;
+}
+
+.gRules {
+    size: 50px;
+    color: lightpink;
+    font-family: "Bubbler One", sans-serif;
+    text-align: center;
+
+}
+
+.back {
+    text-align: center;
+}
+
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: confetti-fall 2s forwards;
+}
+
+@keyframes confetti-fall {
+    from {
+        transform: translateY(-100vh) rotate(0);
     }
 
-    div {
-        text-align: center;
-        color: pink;
-        font-family: "Bubbler One", sans-serif;
-        text-align: center;
+    to {
+        transform: translateY(100vh) rotate(360deg);
     }
-
-    questions {
-        color: pink;
-        font-family: "Bubbler One", sans-serif;
-        text-align: center;
-    }
-    .gRules {
-        size: 50px;
-        color: lightpink;
-        font-family: "Bubbler One", sans-serif;
-       text-align: center;
-        
-    }
-
-    .back {
-        text-align: center;
-    }
+}
