@@ -310,6 +310,8 @@ const categoryContainerElement = document.querySelector(".categories")
 const kidMovies = document.querySelector("km")
 const popCulture = document.querySelector("pc")
 const randomFacts = document.querySelector("rf")
+const audio = document.getElementById('background-music')
+const musicButton = document.getElementById("music")
 
 
 
@@ -429,6 +431,16 @@ const showCategories = () => {
     document.getElementById("mainTitle").style.display = "none";
 }
 
+
+const playPauseMusic = () => {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+    
+}
+
 init()
 /*----------- Event Listeners ----------*/
 startGameButton.addEventListener("click", showCategories);
@@ -441,4 +453,4 @@ option1.addEventListener("click", handleAnswerClick);
 option2.addEventListener("click", handleAnswerClick);
 option3.addEventListener("click", handleAnswerClick);
 option4.addEventListener("click", handleAnswerClick);
-
+musicButton.addEventListener('click', playPauseMusic);

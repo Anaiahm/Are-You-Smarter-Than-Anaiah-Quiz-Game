@@ -10,6 +10,19 @@ body {
         justify-content: center;
 }
 
+#music img{
+    width: 30px;         
+    height: 30px;
+    background-color: transparent;
+}
+
+#music {
+    position: fixed;
+    top: 15px;
+   right: 15px;
+   border: none;
+}
+
 h1 {
     
     font-family: "cabin-sketch-bold", sans-serif;
