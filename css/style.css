@@ -143,7 +143,7 @@ div {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 30px;
+        font-size: 25px;
         top: 50px;
     }
 
@@ -166,10 +166,20 @@ div {
 
     }
 
+    #startContainer {
+        left:40%;
+        
+    }
+
+
+    #mainTitle {
+        top: 100px;
+        
+    }
+
 
     .choice {
-        top: 275px;
-        font-size: 16px;
+        top: 180px;
     }
 
 
@@ -177,7 +187,5 @@ div {
         font-size: 20px;
         top: 100px;
     }
-    #quizContainer1 button {
-        font-size: 10px;
-    }
+
 }
