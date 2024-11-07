@@ -1,38 +1,79 @@
 body {
-    body {
-        background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fchalkboard&psig=AOvVaw10EdP_X2qFL4nT1I46RwO2&ust=1721793224755000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIiz_t6hvIcDFQAAAAAdAAAAABAE');
-        /* Path to your image */
-        background-size: cover;
-        /* Cover the entire page */
-        background-position: center center;
-        /* Center the image */
+        background-color: #333;
+        background-image: url('Images/Chalkboard-Game.png');
+        background-size:cover;
+        background-position: center;
         background-repeat: no-repeat;
-        /* Do not repeat the image */
-    }
-
+        background-attachment: fixed;
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
 }
 
 h1 {
+    
+    font-family: "cabin-sketch-bold", sans-serif;
+    font-weight: 700;
+    font-style: normal;
     text-align: center;
-    size: 600px;
+    font-size: 45px;
     color: hotpink;
-    font-weight: bold;
-    font-family: "Bubbler One", sans-serif;
     margin-top: 30px;
+    position:fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ #startContainer {
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    top:60%;
+    left:50%;
+    transform: translate(-50%, -50%);
 
 }
 
+#quizContainer1 p {
+    font-family: "cabin-sketch-regular", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    position:fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+.choice {
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    top:60%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+}
+.GameStatus h2 {
+    font-size: 40px;
+    position:fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: lightpink;
+}
 button {
 
     size: 3px;
-    color: hotpink;
-    font-family: "Bubbler One", sans-serif;
-    display: inline-block;
+    color: lightpink;
+    font-family: "shantell-sans-bouncy", sans-serif;
     margin: 30px;
+    display: inline-block;
     text-align: center;
-    border: solid hotpink;
-    padding: 10px;
-    background-color: white;
+    border: 1px solid hotpink;
+    padding: 6px;
+    background-color: transparent;
+    border-radius: 12px;
 
 }
 
@@ -40,7 +81,9 @@ h2 {
     text-align: center;
     size: 400px;
     color: hotpink;
-    font-family: "Bubbler One", sans-serif;
+    font-family: "cabin-sketch-regular", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 div {
@@ -50,50 +93,93 @@ div {
     text-align: center;
 }
 
-questions {
-    color: pink;
-    font-family: "Bubbler One", sans-serif;
-    text-align: center;
+
+.gRules h2 {
+    font-size: 40px;
+    justify-content: center;
+    position: fixed;
+    top:25%;
+    left:50%;
+    transform: translate(-50%, -50%);
 }
 
-.gRules {
-    size: 50px;
+.gRules ul{
     color: lightpink;
     font-family: "Bubbler One", sans-serif;
     text-align: center;
+    justify-content: center;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
 
 }
 
 .back {
-    text-align: center;
-}
-
-#confetti-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    overflow: hidden;
+    top:80%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color: lightpink;
 }
 
-.confetti {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: red;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: confetti-fall 2s forwards;
+.options {
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    top:60%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+
+}
+.categories h2 {
+    position:fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
 }
 
-@keyframes confetti-fall {
-    from {
-        transform: translateY(-100vh) rotate(0);
+@media (max-width: 480px) {
+    h1 {
+        font-size: 30px;
+        top: 50px;
     }
 
-    to {
-        transform: translateY(100vh) rotate(360deg);
+    button {
+        padding: 6px;
+    }
+
+    .GameStatus h2, .gRules h2, .categories h2 {
+        font-size: 25px;
+        top: 100px;
+    }
+
+    .gRules ul {
+        font-size: 14px;
+    }
+
+    #startContainer, .choice, .options {
+        top: 180px;
+        position: relative;
+
+    }
+
+
+
+    .choice {
+        top: 275px;
+    }
+
+    .choice {
+        font-size: 16px;
+    }
+
+    #quizContainer1 p {
+        font-size: 20px;
+    }
+    #quizContainer1 button {
+        font-size: 10px;
     }
 }

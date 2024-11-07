@@ -45,6 +45,51 @@ const questions = [
             { choice: "Jessie", correct: false },
         ]
     },
+    {
+        question: "What dessert does Princess Tiana make?",
+        options: [
+            { choice: "Pie", correct: false },
+            { choice: "Cupcakes", correct: false },
+            { choice: "Beignets", correct: true },
+            { choice: "Peach Cobbler", correct: false },
+        ]
+    },
+    {
+        question: "What movie is the character Captain Hook from?",
+        options: [
+            { choice: "Peter's flight", correct: false },
+            { choice: "Hocus Pocus", correct: false },
+            { choice: "Peter pan", correct: true },
+            { choice: "Tangled", correct: false },
+        ]
+    },
+    {
+        question: "What Princess lost her glass slipper?",
+        options: [
+            { choice: "Rapunzel", correct: false },
+            { choice: "Snow White", correct: false },
+            { choice: "Cinderella", correct: true },
+            { choice: "Jasmine", correct: false },
+        ]
+    },
+    {
+        question: "What colors do the fairies make Aurora's dress?",
+        options: [
+            { choice: "Pink & Blue", correct: true },
+            { choice: "Pink & Purple", correct: false },
+            { choice: "Yellow & Green", correct: false },
+            { choice: "Yellow & Pink", correct: false },
+        ]
+    },
+    {
+        question: "Ohana means family. Family means nobody gets left behind...?",
+        options: [
+            { choice: "Or eaten", correct: false },
+            { choice: "Or goes hungry ", correct: false },
+            { choice: "Or forgotten", correct: true },
+            { choice: "Or lost", correct: false },
+        ]
+    },
 ];
 const questions2 = [
     {
@@ -92,6 +137,51 @@ const questions2 = [
             { choice: "Hulk", correct: false },
         ]
     },
+    {
+        question: "What movie premiered at the same time as Barbie?",
+        options: [
+            { choice: "Oppenheimer", correct: true },
+            { choice: "Wish", correct: false },
+            { choice: "Sing 2", correct: false },
+            { choice: "Frozen", correct: false },
+        ]
+    },
+    {
+        question: "H-O-T-T-O-G-O, You can take me ...?",
+        options: [
+            { choice: "to the rodeooo", correct: false },
+            { choice: "i got to gooo", correct: false },
+            { choice: "in the snowww", correct: false },
+            { choice: "hot to gooo", correct: true },
+        ]
+    },
+    {
+        question: "How many claps are in the Friends theme song?",
+        options: [
+            { choice: "5", correct: false },
+            { choice: "3", correct: false },
+            { choice: "4", correct: true },
+            { choice: "2", correct: false },
+        ]
+    },
+    {
+        question: "Who was the first Black Woman to be on the ballot for President of the USA?",
+        options: [
+            { choice: "Kamala Harris", correct: false },
+            { choice: "Shirley Chisholm", correct: true },
+            { choice: "Beyonce", correct: false },
+            { choice: "Hillary Clinton", correct: false },
+        ]
+    },
+    {
+        question: "How many licks does it take to get to the center of a tootsie pop?",
+        options: [
+            { choice: "328", correct: false },
+            { choice: "The world may never know", correct: true },
+            { choice: "Sixteen", correct: false },
+            { choice: "The world already knows", correct: false },
+        ]
+    },
 ];
 const questions3 = [
     {
@@ -137,6 +227,51 @@ const questions3 = [
             { choice: "Oxygen", correct: false },
             { choice: "Nitrogen", correct: true },
             { choice: "Carbon", correct: false },
+        ]
+    },
+    {
+        question: "Which is not a berry?",
+        options: [
+            { choice: "Grapees", correct: false },
+            { choice: "Strawberry", correct: true },
+            { choice: "Banana", correct: false },
+            { choice: "Tomatoes", correct: false },
+        ]
+    },
+    {
+        question: "How many hearts do octopuses have?",
+        options: [
+            { choice: "1", correct: false },
+            { choice: "6", correct: false },
+            { choice: "2", correct: false },
+            { choice: "3", correct: true },
+        ]
+    },
+    {
+        question: "What never spoils?",
+        options: [
+            { choice: "Canned Beans", correct: false },
+            { choice: "Pickles", correct: false },
+            { choice: "Oats", correct: false },
+            { choice: "Honey", correct: true },
+        ]
+    },
+    {
+        question: "A day on which planet lasts longer than a year?",
+        options: [
+            { choice: "Mars", correct: false },
+            { choice: "Venus", correct: true },
+            { choice: "Earth", correct: false },
+            { choice: "Jupiter", correct: false },
+        ]
+    },
+    {
+        question: "What did Sharks exist before?",
+        options: [
+            { choice: "Algae", correct: false },
+            { choice: "The earth", correct: false },
+            { choice: "Trees", correct: true },
+            { choice: "Jawless Fish", correct: false },
         ]
     },
 ];
@@ -192,6 +327,7 @@ const init = () => {
 }
 
 const startQuiz1 = () => {
+    document.getElementById("mainTitle").style.display = "none";
     quiz = questions;
     QuizContainer1Element.style.display = "block"
     startContainerElement.style.display = "none"
@@ -200,6 +336,7 @@ const startQuiz1 = () => {
     render()
 }
 const startQuiz2 = () => {
+    document.getElementById("mainTitle").style.display = "none";
     quiz = questions2;
     QuizContainer1Element.style.display = "block"
     startContainerElement.style.display = "none"
@@ -208,6 +345,7 @@ const startQuiz2 = () => {
     render()
 }
 const startQuiz3 = () => {
+    document.getElementById("mainTitle").style.display = "none";
     quiz = questions3;
     QuizContainer1Element.style.display = "block"
     startContainerElement.style.display = "none"
@@ -218,7 +356,7 @@ const startQuiz3 = () => {
 const renderWinOrLoseMessage = () => {
     
 
-    if (score >= 5) {
+    if (score >= 7) {
         winStatusMessage.style.display = "block"
         QuizContainer1Element.style.display = "none"
         backButton.style.display = "block"
@@ -230,7 +368,7 @@ const renderWinOrLoseMessage = () => {
     }
 }
 const render = () => {
-    if (currentQuestionIDX < 5) {
+    if (currentQuestionIDX < 10) {
         console.log(quiz)
         renderQuestion(quiz)
 
@@ -265,6 +403,8 @@ const showRules = () => {
 gameRules.style.display = "block"
 startContainerElement.style.display = "none"
 backButton.style.display = "block"
+document.getElementById("mainTitle").style.display = "none";
+
 }
 
 const goBack = () => {
@@ -278,6 +418,7 @@ const goBack = () => {
     backButton.style.display = "none"
     startContainerElement.style.display = "block"
     categoryContainerElement.style.display = 'none'
+    document.getElementById("mainTitle").style.display = "block";
 }
 
 const showCategories = () => {
@@ -285,6 +426,7 @@ const showCategories = () => {
     backButton.style.display = "block"
     gameRules.style.display = "none"
     startContainerElement.style.display = "none"
+    document.getElementById("mainTitle").style.display = "none";
 }
 
 init()
