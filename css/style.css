@@ -167,17 +167,15 @@ div {
     }
 
 
-
     .choice {
         top: 275px;
-    }
-
-    .choice {
         font-size: 16px;
     }
 
+
     #quizContainer1 p {
         font-size: 20px;
+        top: 100px;
     }
     #quizContainer1 button {
         font-size: 10px;
