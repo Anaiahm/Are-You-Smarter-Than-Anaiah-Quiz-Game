@@ -175,6 +175,9 @@ div {
     button {
         padding: 6px;
     }
+    button:hover {
+        border-color: transparent;
+    }
 
     .GameStatus h2, .gRules h2, .categories h2 {
         font-size: 25px;
@@ -225,7 +228,7 @@ div {
         top:5%;
         display: flex;
     }
+}
     .hidden {
     color:transparent;
     }
-}
