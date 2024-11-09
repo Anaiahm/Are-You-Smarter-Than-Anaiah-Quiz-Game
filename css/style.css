@@ -38,6 +38,11 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+#questionNumberDisplay {
+    left:20%;
+    display: flex;
+    top: 10%;
+}
  #startContainer {
     display:flex;
     justify-content: center;
@@ -201,4 +206,14 @@ div {
         top: 100px;
     }
 
+    #questionNumberDisplay {
+        left:25%;
+        display: flex;
+        top: 5%;
+        font-size: 20px;
+    }
+}
+
+.hidden {
+    color:transparent;
 }

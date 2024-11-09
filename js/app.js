@@ -277,11 +277,14 @@ const questions3 = [
 ];
 
 
+
+
 /*---------- Variables (state) ---------*/
 let score = 0;
 let currentQuestionIDX = 0;
 let winner = null;
 let quiz 
+
 
 
 /*----- Cached Element References  -----*/
@@ -312,6 +315,8 @@ const popCulture = document.querySelector("pc")
 const randomFacts = document.querySelector("rf")
 const audio = document.getElementById('background-music')
 const musicButton = document.getElementById("music")
+const questionNumber = document.getElementById("questionNumberDisplay").textContent;
+
 
 
 
@@ -356,26 +361,32 @@ const startQuiz3 = () => {
     render()
 }
 const renderWinOrLoseMessage = () => {
-    
 
     if (score >= 7) {
+        document.getElementById("winScore").textContent = score;
         winStatusMessage.style.display = "block"
         QuizContainer1Element.style.display = "none"
         backButton.style.display = "block"
+        score.style.display = "block"
     }
     else {
+        document.getElementById("loseScore").textContent = score;
         loseStatusMessage.style.display = "block"
         QuizContainer1Element.style.display = "none"
         backButton.style.display = "block"
     }
 }
 const render = () => {
+    let questionNumber = `Question ${currentQuestionIDX + 1}/10`
     if (currentQuestionIDX < 10) {
-        console.log(quiz)
         renderQuestion(quiz)
-
+        console.log(questionNumber)
+        console.log(currentQuestionIDX)
+        document.getElementById("questionNumberDisplay").classList.remove("hidden");
+        document.getElementById("questionNumberDisplay").textContent = questionNumber;
     } else {
         renderWinOrLoseMessage()
+        document.getElementById("questionNumberDisplay").classList.add("hidden");
     }
    
 }
@@ -398,15 +409,15 @@ const handleAnswerClick = (event) => {
     }
     currentQuestionIDX = currentQuestionIDX + 1
     render()
-
+    
 }
 
 const showRules = () => {
-gameRules.style.display = "block"
-startContainerElement.style.display = "none"
-backButton.style.display = "block"
-document.getElementById("mainTitle").style.display = "none";
-
+    gameRules.style.display = "block"
+    startContainerElement.style.display = "none"
+    backButton.style.display = "block"
+    document.getElementById("mainTitle").style.display = "none";
+    
 }
 
 const goBack = () => {
@@ -421,6 +432,7 @@ const goBack = () => {
     startContainerElement.style.display = "block"
     categoryContainerElement.style.display = 'none'
     document.getElementById("mainTitle").style.display = "block";
+    document.getElementById("questionNumberDisplay").classList.add("hidden");
 }
 
 const showCategories = () => {
@@ -433,11 +445,11 @@ const showCategories = () => {
 
 
 const playPauseMusic = () => {
-        if (audio.paused) {
-          audio.play();
-        } else {
-          audio.pause();
-        }
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
     
 }
 
