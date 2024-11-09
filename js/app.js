@@ -361,7 +361,7 @@ const startQuiz3 = () => {
     render()
 }
 const renderWinOrLoseMessage = () => {
-
+    document.getElementById("questionNumberDisplay").classList.add("hidden");
     if (score >= 7) {
         document.getElementById("winScore").textContent = score;
         winStatusMessage.style.display = "block"

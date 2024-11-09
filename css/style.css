@@ -88,12 +88,19 @@ button {
     margin: 30px;
     display: inline-block;
     text-align: center;
-    border: 1px solid hotpink;
+    border: 1px solid transparent;
     padding: 6px;
     background-color: transparent;
     border-radius: 12px;
 
 }
+
+button:hover {
+  border-color: white;
+
+}
+
+
 
 h2 {
     text-align: center;
@@ -171,7 +178,7 @@ div {
 
     .GameStatus h2, .gRules h2, .categories h2 {
         font-size: 25px;
-        top: 100px;
+        top: 150px;
     }
 
     .gRules ul {
@@ -179,7 +186,7 @@ div {
     }
 
     #startContainer, .choice, .options {
-        top: 180px;
+        top: 230px;
         position: relative;
 
     }
@@ -191,19 +198,19 @@ div {
 
 
     #mainTitle {
-        top: 100px;
+        top: 150px;
         
     }
 
 
     .choice {
-        top: 180px;
+        top: 230px;
     }
 
 
     #quizContainer1 p {
         font-size: 20px;
-        top: 100px;
+        top: 150px;
     }
 
     #questionNumberDisplay {
@@ -212,8 +219,13 @@ div {
         top: 5%;
         font-size: 20px;
     }
-}
 
-.hidden {
+
+    #music {
+        top:5%;
+        display: flex;
+    }
+    .hidden {
     color:transparent;
+    }
 }
